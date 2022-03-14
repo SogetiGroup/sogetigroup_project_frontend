@@ -110,10 +110,10 @@ const Header=()=>{
                         <li className='nav-item'>
                             <Link className="navbar-brand"  to="/signup" >Sign Up </Link>
                         </li>
-                        <li className='nav-item'>
-                            <Link className="navbar-brand" to="/signin" >Sign in</Link>
-                        </li>
                     </ul>
+                    <form>
+                        <Link className="navbar-brand " to="/signin" >Sign in</Link>
+                    </form>
                 </div>
             </nav>
         </Fragment>
