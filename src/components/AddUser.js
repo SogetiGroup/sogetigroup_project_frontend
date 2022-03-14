@@ -24,6 +24,7 @@ const AddUser = () => {
                      </div>
                      <div className='row mb-3'>
                            <div className='col-sm-9 m-auto'><input type="text"{...register("email",{required:true})} placeholder="Enter Email" class="form-control" /></div>
+                           {errors.email && <span className='text-danger'>Email is required</span>}
                      </div>
                      <div className='row mb-3'>
                            <div className='col-sm-9 m-auto'><input type="text"{...register("userName",{required:true})} placeholder="Enter UserName" class="form-control" /></div>
