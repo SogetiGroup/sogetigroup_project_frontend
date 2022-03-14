@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import UserService from '../services/UserService';
 
 const AddUser = () => {
-    const {register,handleSubmit,reset,formState:{errors}}= useForm();
+    const [user,setUser]= useState([]);
+    const {register,handleSubmit,formState:{errors}}= useForm();
+
     const saveUser=(data)=>{
         console.log(data);
-    }
+        const service = new UserService();
+        service.saveUser(data).then(response=>{
+            if (response.status===201) {
+              setUser(response.data); 
+            } else {
+             // throw API Error.   
+            }
+        });
 
+    }
 
 
     return (
