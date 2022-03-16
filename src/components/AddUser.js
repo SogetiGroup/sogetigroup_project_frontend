@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import UserService from '../services/UserService';
 
 const AddUser = () => {
     const [user,setUser]= useState([]);
     const {register,handleSubmit,formState:{errors}}= useForm();
+    const history= useHistory();
 
     const saveUser=(data)=>{
         console.log(data);
         const service = new UserService();
         service.saveUser(data).then(response=>{
             if (response.status===201) {
-              setUser(response.data); 
+              setUser(response.data);
+              history.push("/admin") 
             } else {
              // throw API Error.   
             }
