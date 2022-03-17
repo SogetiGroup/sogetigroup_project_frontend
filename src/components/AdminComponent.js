@@ -31,6 +31,7 @@ service.getAllUsers().then((response)=>{
                         <th>FirstName</th>
                         <th>LastName</th>
                         <th>Email</th>
+                        <th>Title</th>
                         <th>UserName</th>
                         <th>Password</th>
                         <th>Action</th>
@@ -58,6 +59,7 @@ const TableRow = ()=> {
                     <td>{user.firstName}</td>
                     <td>{user.lastName}</td>
                     <td>{user.email}</td>
+                    <td>{user.title}</td>
                     <td>{user.userName}</td>
                     <td>{user.password}</td>
                     <td><TableAction/></td>
