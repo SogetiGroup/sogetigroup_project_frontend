@@ -41,11 +41,15 @@ const AddUser = () => {
                            {errors.email && <span className='text-danger'>Email is required</span>}
                      </div>
                      <div className='row mb-3'>
+                     < div className='col-sm-9 m-auto'><input type="text"{...register("title",{required:true})} class="form-control" placeholder="Enter title"/></div>
+                    </div>
+                     <div className='row mb-3'>
                            <div className='col-sm-9 m-auto'><input type="text"{...register("userName",{required:true})} placeholder="Enter UserName" class="form-control" /></div>
                      </div>
                      <div className='row mb-3'>
-<                          div className='col-sm-9 m-auto'><input type="password"{...register("password",{required:true})} class="form-control" placeholder="Enter password"/></div>
-                    </div>
+                     <div className='col-sm-9 m-auto'><input type="password"{...register("password",{required:true})} class="form-control" placeholder="Enter password"/></div>
+                           {errors.email && <span className='text-danger'>Provide password</span>}
+                      </div>
                     <button type='submit' className='btn btn-primary m-2'>Add</button>
                     <Link to="/admin" className="btn btn-danger"> Cancel </Link>
             </form>	
