@@ -6,6 +6,7 @@ const AdminComponent = () => {
 
  const [users,setUsers]= useState([]);
  const [message,setMessage]=useState({value:"",type:""});
+ const [reload, setReload] = useState(false);
 
  useEffect(()=>{
 const service = new UserService();
@@ -19,7 +20,7 @@ service.getAllUsers().then((response)=>{
         setMessage({value:"Failed",type:"danger"}); 
     }
 })
- },[]);
+ },[reload]);
 
     const Table=()=>{
 
@@ -32,6 +33,7 @@ service.getAllUsers().then((response)=>{
                         <th>LastName</th>
                         <th>Email</th>
                         <th>Title</th>
+                        <th>UserLevel</th>
                         <th>UserName</th>
                         <th>Password</th>
                         <th>Action</th>
@@ -39,11 +41,23 @@ service.getAllUsers().then((response)=>{
                 </thead>
                 )
         };
-        const TableAction =()=>{
+        const TableAction =(props)=>{
+
+            const deleteUserById = () => {
+                const service = new UserService();
+                service.deleteUserById(props.id).then(response => {
+                    if(response.status === 204 || response.status === 202) {
+                        setMessage({value: 'User with id: ' + props.id + ' successfully deleted!', type: 'success'});
+                        setReload(!reload);
+                    }else {
+                        setMessage({value: 'API Error: ' + response.status, type: 'danger'});
+                    }
+                });
+            }
+
             return(
         <div className=''>
-        <button type="button" className="btn btn-primary">Details</button>
-        <button type="button" className="btn btn-danger m-2">Delete</button>
+        <button type="button" className="btn btn-danger m-2" onClick={() => { if (window.confirm('Are you sure you wish to delete this user?')) deleteUserById()} }>Delete</button>
         <button type="button" className="btn btn-warning">Edit</button>
         </div>
             );
@@ -60,9 +74,10 @@ const TableRow = ()=> {
                     <td>{user.lastName}</td>
                     <td>{user.email}</td>
                     <td>{user.title}</td>
+                    <td>{user.userLevel}</td>
                     <td>{user.userName}</td>
                     <td>{user.password}</td>
-                    <td><TableAction/></td>
+                    <td><TableAction id={user.id}/></td>
                 </tr>
             ))   
            }                     

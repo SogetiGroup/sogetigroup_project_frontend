@@ -1,5 +1,5 @@
  import axios from "axios";
-const Base_URL="http://localhost:8080/event/api/v1/users";
+const Base_URL="http://localhost:8080/event/api/v1/users/";
 
 class UserService {
 getAllUsers=async()=>{
