@@ -17,6 +17,7 @@ const AddUser = () => {
         service.saveUser(data).then(response=>{
             if (response.status===201) {
               setUser(response.data);
+              setMessage({value: 'Operation is done for person Id:' + response.data.id , type: 'success'});
              history.push("/admin");
               setReload(!reload);
             } else {
