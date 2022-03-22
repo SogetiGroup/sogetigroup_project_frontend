@@ -8,6 +8,7 @@ const AddUser = () => {
     const [user,setUser]= useState([]);
     const {register,handleSubmit,formState:{errors}}= useForm();
     const [message,setMessage]=useState({value:"",type:""});
+    const [reload, setReload] = useState(false);
     const history= useHistory();
 
     const saveUser=(data)=>{
@@ -16,7 +17,9 @@ const AddUser = () => {
         service.saveUser(data).then(response=>{
             if (response.status===201) {
               setUser(response.data);
-              history.push("/admin"); 
+             history.push("/admin");
+              setMessage({value: 'Operation is done for person Id:' + response.data.id , type: 'success'});
+              setReload(!reload);
             } else {
              setMessage({value:"API Error",type:"danger"});
             }
