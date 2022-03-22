@@ -6,6 +6,7 @@ const AdminComponent = () => {
 
  const [users,setUsers]= useState([]);
  const [message,setMessage]=useState({value:"",type:""});
+ const [reload, setReload] = useState(false);
 
  useEffect(()=>{
 const service = new UserService();
@@ -14,12 +15,12 @@ service.getAllUsers().then((response)=>{
     console.log(response);
     if (response.status ===200) {
         setUsers(response.data);
-        setMessage({value:"Operation is Done Fetched All Users From Backend API",type:"success"});
+        //setMessage({value:"Operation is Done Fetched All Users From Backend API",type:"success"});
     } else {
         setMessage({value:"Failed",type:"danger"}); 
     }
 })
- },[]);
+ },[reload]);
 
     const Table=()=>{
 
@@ -39,11 +40,24 @@ service.getAllUsers().then((response)=>{
                 </thead>
                 )
         };
-        const TableAction =()=>{
+        const TableAction =(props)=>{
+
+            const deleteById=()=>{
+                const service = new UserService();
+                service.deleteUserById(props.id).then(response=>{
+                    if (response.status === 204 ) {
+                        setMessage({value:"The user with id : " + props.id + " is deleted successfully",type:"warning"});
+                        setReload(!reload);   
+                    } else {
+                        setMessage({value:"API Error"+ response.status,type:"danger"});   
+                    }
+                });
+
+            }
             return(
-        <div className=''>
-        <button type="button" className="btn btn-primary">Details</button>
-        <button type="button" className="btn btn-danger m-2">Delete</button>
+        <div className='container'>
+        <button type="button" className="btn btn-danger m-2" onClick={() =>
+        { if (window.confirm('Are you sure you wish to delete this user?')) deleteById()} }>Delete</button>
         <button type="button" className="btn btn-warning">Edit</button>
         </div>
             );
@@ -62,7 +76,7 @@ const TableRow = ()=> {
                     <td>{user.title}</td>
                     <td>{user.userName}</td>
                     <td>{user.password}</td>
-                    <td><TableAction/></td>
+                    <td><TableAction id={user.id}/></td>
                 </tr>
             ))   
            }                     
