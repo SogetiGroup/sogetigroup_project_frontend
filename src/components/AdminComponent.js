@@ -43,7 +43,6 @@ service.getAllUsers().then((response)=>{
         };
         const TableAction =(props)=>{
 
-<<<<<<< HEAD
             const deleteById=()=>{
                 const service = new UserService();
                 service.deleteUserById(props.id).then(response=>{
@@ -60,23 +59,6 @@ service.getAllUsers().then((response)=>{
         <div className='container'>
         <button type="button" className="btn btn-danger m-2" onClick={() =>
         { if (window.confirm('Are you sure you wish to delete this user?')) deleteById()} }>Delete</button>
-=======
-            const deleteUserById = () => {
-                const service = new UserService();
-                service.deleteUserById(props.id).then(response => {
-                    if(response.status === 204 || response.status === 202) {
-                        setMessage({value: 'User with id: ' + props.id + ' successfully deleted!', type: 'success'});
-                        setReload(!reload);
-                    }else {
-                        setMessage({value: 'API Error: ' + response.status, type: 'danger'});
-                    }
-                });
-            }
-
-            return(
-        <div className=''>
-        <button type="button" className="btn btn-danger m-2" onClick={() => { if (window.confirm('Are you sure you wish to delete this user?')) deleteUserById()} }>Delete</button>
->>>>>>> 2dd7876b66559a4a6f12ea043f7b01a16e572462
         <button type="button" className="btn btn-warning">Edit</button>
         </div>
             );
