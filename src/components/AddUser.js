@@ -18,7 +18,6 @@ const AddUser = () => {
             if (response.status===201) {
               setUser(response.data);
              history.push("/admin");
-              setMessage({value: 'Operation is done for person Id:' + response.data.id , type: 'success'});
               setReload(!reload);
             } else {
              setMessage({value:"API Error",type:"danger"});
