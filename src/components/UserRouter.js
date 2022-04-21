@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 import AddUser from './AddUser';
 import AdminComponent from './AdminComponent';
+import Mailer from './Mailer';
 
 const UserRouter = () => {
     return (
@@ -18,6 +19,7 @@ const UserRouter = () => {
                             <Route path="/signin" component={SignIn}/>
                             <Route path="/admin" component={AdminComponent}/>
                             <Route path="/add" component={AddUser}/>
+                            <Route path="/email" component={Mailer}/>
                         </Switch>
                     </Router>
                 </div>
