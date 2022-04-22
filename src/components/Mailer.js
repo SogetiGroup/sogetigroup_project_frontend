@@ -17,33 +17,30 @@ const Mailer = () => {
    }
 
 
-    return (
-        <div className='container'>
-
-            <h1>Send Email Form</h1>
-
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <form className='row' onSubmit={handleSubmit(sendEmail)}>
-            <div class="form-label-group">
-                <label>Name</label>
-                <input type='text' name='name' class="form-control m-auto mb-2"/>
-            </div>
-
-            <div class="form-label-group">
-                <label>Email</label>
-                <input type='email' name='user-email' class="form-control m-auto mb-2"/>
+   return(
+    <div>
+        <div className="container">
+        <form>
+                <div className="row pt-5 mx-auto">
+                    <div className="col-8 form-group mx-auto">
+                        <input type="text" className="form-control" placeholder="Name" name="name"/>
+                    </div>
+                    <div className="col-8 form-group pt-2 mx-auto">
+                        <input type="email" className="form-control" placeholder="Email Address" name="email"/>
+                    </div>
+                    <div className="col-8 form-group pt-2 mx-auto">
+                        <input type="text" className="form-control" placeholder="Subject" name="subject"/>
+                    </div>
+                    <div className="col-8 form-group pt-2 mx-auto">
+                        <textarea className="form-control" id="" cols="30" rows="8" placeholder="Your message" name="message"></textarea>
+                    </div>
+                    <div className="col-8 pt-3 mx-auto">
+                        <input type="submit" className="btn btn-info" value="Send Message"></input>
+                    </div>
                 </div>
-
-            <div className='row mb-2 '>
-                <label>Message</label>
-                <textarea name='message' rows='4'/>
-            </div>
-                
-                <button type='submit' className='m-auto btn btn-primary' onClick={() => Mailer()}>Send</button>
-
             </form>
-            </div>
         </div>
+    </div>
     );
 };
 
