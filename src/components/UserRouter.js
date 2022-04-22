@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 import AddUser from './AddUser';
 import AdminComponent from './AdminComponent';
 import Mailer from './Mailer';
+import UpdateUser from './UpdateUser';
 
 const UserRouter = () => {
     return (
@@ -20,6 +21,7 @@ const UserRouter = () => {
                             <Route path="/admin" component={AdminComponent}/>
                             <Route path="/add" component={AddUser}/>
                             <Route path="/email" component={Mailer}/>
+                            <Route path="/update/:id" component={UpdateUser}/>
                         </Switch>
                     </Router>
                 </div>
