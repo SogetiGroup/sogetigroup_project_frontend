@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import MailerService from '../services/MailerService';
 
 const Mailer = () => {
-    const {handleSubmit}= useForm();
 
+    const [message, setMessage] = useState({value: '',type: ''});
+    const [reload, setReload] = useState();
     
-        const sendEmail = (data) => {
+        const sendEmail = () => {
    const service= new MailerService();
-   service.sendEmailTo()
-       .then((response) => {
-           console.log(response.text);
-       }, (error) => {
-           console.log(error.text);
+   service.sendEmailTo().then((response) => {
+    if(response.exists()) { 
+        console.log(response.text);
+        setMessage({value: "Mail was successfully sent!", type: "success"});
+} else {
+    setMessage({value: "API Error!", type: "danger"});
+}  
+    
        });
    }
 
@@ -34,8 +37,8 @@ const Mailer = () => {
                     <div className="col-8 form-group pt-2 mx-auto">
                         <textarea className="form-control" id="" cols="30" rows="8" placeholder="Your message" name="message"></textarea>
                     </div>
-                    <div className="col-8 pt-3 mx-auto">
-                        <input type="submit" className="btn btn-info" value="Send Message"></input>
+                    <div className="row col-8 pt-3 mx-auto">
+                        <button type='button' className='btn btn-info' onClick={() => sendEmail()}>Send Email</button>
                     </div>
                 </div>
             </form>
