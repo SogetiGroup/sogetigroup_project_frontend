@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const UpdateUser = () => {
 
-    const {register,handleSubmit,formState:{errors}}= useForm();
+const {register,handleSubmit,formState:{errors}}= useForm();
 
   
 

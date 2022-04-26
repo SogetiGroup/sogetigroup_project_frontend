@@ -27,7 +27,6 @@ const AddUser = () => {
 
     }
 
-
     return (
         <div className='container'>         
         <div className='col-xs-10 col-sm-8 p-sm-5 '>

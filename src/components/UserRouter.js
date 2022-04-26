@@ -22,6 +22,8 @@ const UserRouter = () => {
                             <Route path="/add" component={AddUser}/>
                             <Route path="/email" component={Mailer}/>
                             <Route path="/update/:id" component={UpdateUser}/>
+
+                            <Route component={NotFound}/>
                         </Switch>
                     </Router>
                 </div>
@@ -33,6 +35,7 @@ const Welcome=()=><h5>Welcome Page</h5>
 const Home=()=><h5>Home Page</h5>
 const About=()=><h5>About Us Page</h5>
 const Contact=()=><h5>Contact Us Page</h5>
+const NotFound = () => <b>Page Not Found</b>;
 
 const SignUp=()=>
             <div class="container ">         
