@@ -1,6 +1,7 @@
 import UserService from "../services/UserService";
 import React, {useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const AdminComponent = () => {
 
@@ -42,6 +43,7 @@ service.getAllUsers().then((response)=>{
                 )
         };
         const TableAction =(props)=>{
+const history = useHistory();
 
             const deleteById=()=>{
                 const service = new UserService();
@@ -55,11 +57,16 @@ service.getAllUsers().then((response)=>{
                 });
 
             }
+
+            const updateUserById=()=>{
+                history.push(`/update/${props.id}`);
+            }
+
             return(
         <div className='container'>
         <button type="button" className="btn btn-danger m-2" onClick={() =>
         { if (window.confirm('Are you sure you wish to delete this user?')) deleteById()} }>Delete</button>
-        <button type="button" className="btn btn-warning">Edit</button>
+        <button type="button" className="btn btn-warning" onClick={updateUserById}>Edit</button>
         </div>
             );
         };
