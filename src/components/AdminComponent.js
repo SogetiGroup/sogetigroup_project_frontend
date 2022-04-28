@@ -2,12 +2,14 @@ import UserService from "../services/UserService";
 import React, {useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const AdminComponent = () => {
 
  const [users,setUsers]= useState([]);
  const [message,setMessage]=useState({value:"",type:""});
  const [reload, setReload] = useState(false);
+ const params = useParams();
 
  useEffect(()=>{
 const service = new UserService();
@@ -81,7 +83,7 @@ const TableRow = ()=> {
                     <td>{user.firstName}</td>
                     <td>{user.lastName}</td>
                     <td>{user.email}</td>
-                    <td>{user.title}</td>
+                    <td> {user.titles.map(t => t.title + ' ')}</td>
                     <td>{user.userLevel}</td>
                     <td>{user.userName}</td>
                     <td>{user.password}</td>

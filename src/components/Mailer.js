@@ -6,7 +6,7 @@ const Mailer = () => {
     const [message, setMessage] = useState({value: '',type: ''});
     const [reload, setReload] = useState();
     
-        const sendEmail = () => {
+    const sendEmail = () => {
    const service= new MailerService();
    service.sendEmailTo().then((response) => {
     if(response.exists()) { 
@@ -25,9 +25,6 @@ const Mailer = () => {
         <div className="container">
         <form>
                 <div className="row pt-5 mx-auto">
-                    <div className="col-8 form-group mx-auto">
-                        <input type="text" className="form-control" placeholder="Name" name="name"/>
-                    </div>
                     <div className="col-8 form-group pt-2 mx-auto">
                         <input type="email" className="form-control" placeholder="Email Address" name="email"/>
                     </div>

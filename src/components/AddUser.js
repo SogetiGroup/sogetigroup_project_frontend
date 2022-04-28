@@ -47,12 +47,8 @@ const AddUser = () => {
                      < div className='col- m-auto'><input type="text"{...register("title",{required:true})} class="form-control" placeholder="Enter title"/></div>
                     </div>
                      <div className='row mb-3'>
-                           <div className='col- m-auto'><input type="text"{...register("userName",{required:true})} placeholder="Enter UserName" class="form-control" /></div>
+                           <div className='col- m-auto'><input type="text"{...register("userLevel",{required:true})} placeholder="Enter UserLevel" class="form-control" /></div>
                      </div>
-                     <div className='row mb-3'>
-                     <div className='col- m-auto'><input type="password"{...register("password",{required:true})} class="form-control" placeholder="Enter password"/></div>
-                           {errors.password && <span className='text-danger'>Provide password</span>}
-                      </div>
                     <button type='submit' className='btn btn-primary m-2'>Add</button>
                     <Link to="/admin" className="btn btn-danger"> Cancel </Link>
             </form>	
