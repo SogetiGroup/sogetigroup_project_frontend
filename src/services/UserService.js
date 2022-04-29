@@ -14,8 +14,9 @@ saveUser = async (data) => {
     return await axios.post(Base_URL, data).then(response => response);
 };
 
-updateUser = async (data) => {
-    return await axios.put(Base_URL, data).then(response => response);
+updateUser = async (id, data) => {
+    console.log(Base_URL + id, " ", data);
+    return await axios.put(Base_URL + id, data).then(response => response);
 };
 
 deleteUserById = async (id) => {
