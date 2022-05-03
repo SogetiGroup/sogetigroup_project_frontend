@@ -64,17 +64,17 @@ const inputChangeHandle = (e, name) =>{
     console.log("E:", e.target.value);
     console.log("N:", name);
     const _user = {... user};
-    if(name == "firstName"){
+    if(name === "firstName"){
         _user.firstName = e.target.value;
-    } else if(name == "lastName"){
+    } else if(name === "lastName"){
         _user.lastName = e.target.value;
-    } else if(name=="email"){
+    } else if(name==="email"){
         _user.email=e.target.value;
     }
-    else if(name=="titles"){
+    else if(name==="titles"){
         _user.titles=e.target.value;
     }
-    else if(name=="userLevel"){
+    else if(name==="userLevel"){
         _user.userLevel=e.target.value;
     }
     setUser(_user);
@@ -104,7 +104,7 @@ return (
                      <div className='row mb-3'>
                            <div className='col- m-auto'><input value={user.userLevel} type="text" onChange={(e)=> inputChangeHandle(e,"userLevel")} placeholder="Enter UserLevel" class="form-control" /></div>
                      </div>
-                    <button type='button' className='btn btn-primary m-2' onClick={editUser}>Update</button>
+                    <Link to="/admin" className='btn btn-primary m-2' onClick={editUser}>Update</Link>
                     <Link to="/admin" className="btn btn-danger"> Cancel </Link>
             </form>	
         </div>
