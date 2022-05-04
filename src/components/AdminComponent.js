@@ -64,9 +64,9 @@ const history = useHistory();
 
             return(
         <div className='container'>
+        <button type="button" className="btn btn-warning" onClick={updateUserById}>Edit</button>
         <button type="button" className="btn btn-danger m-2" onClick={() =>
         { if (window.confirm('Are you sure you wish to delete this user?')) deleteById()} }>Delete</button>
-        <button type="button" className="btn btn-warning" onClick={updateUserById}>Edit</button>
         </div>
             );
         };
