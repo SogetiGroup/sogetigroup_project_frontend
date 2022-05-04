@@ -16,7 +16,7 @@ const initialUserData = {
     firstName: "",
     lastName: "",
     email: "",
-    titles: [],
+    userTitle: "",
     userLevel: null
 };
 
@@ -43,7 +43,7 @@ const data = { id: user.id,
     firstName: user.firstName,
     lastName: user.lastName,
     email: user.email,
-    titles: user.titles,
+    userTitle: user.userTitle,
     userLevel: user.userLevel};
 console.log("Data:::: ", data);
 service.updateUser(data.id, data).then((response)=>{
@@ -71,8 +71,8 @@ const inputChangeHandle = (e, name) =>{
     } else if(name==="email"){
         _user.email=e.target.value;
     }
-    else if(name==="titles"){
-        _user.titles=e.target.value;
+    else if(name==="userTitle"){
+        _user.userTitle=e.target.value;
     }
     else if(name==="userLevel"){
         _user.userLevel=e.target.value;
@@ -99,7 +99,7 @@ return (
                           
                      </div>
                      <div className='row mb-3'>
-                     < div className='col- m-auto'><input value={user.titles} type="text" onChange={(e)=> inputChangeHandle(e,"title")} class="form-control" placeholder="Enter title"/></div>
+                     < div className='col- m-auto'><input value={user.userTitle} type="text" onChange={(e)=> inputChangeHandle(e,"userTitle")} class="form-control" placeholder="Enter userTitle"/></div>
                     </div>
                      <div className='row mb-3'>
                            <div className='col- m-auto'><input value={user.userLevel} type="text" onChange={(e)=> inputChangeHandle(e,"userLevel")} placeholder="Enter UserLevel" class="form-control" /></div>

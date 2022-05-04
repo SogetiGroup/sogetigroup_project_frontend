@@ -81,7 +81,7 @@ const TableRow = ()=> {
                     <td>{user.firstName}</td>
                     <td>{user.lastName}</td>
                     <td>{user.email}</td>
-                    <td> {user.titles.map(t => t.title + ' ')}</td>
+                    <td> {user.userTitle}</td>
                     <td>{user.userLevel}</td>
                     <td><TableAction id={user.id}/></td>
                 </tr>
