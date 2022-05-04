@@ -34,7 +34,7 @@ useEffect( ()=>{
 
     });
     console.log("TEST:::: ", user)
-}, [reload]);
+}, []);
 
 const editUser = ()=>{
 
@@ -51,7 +51,7 @@ service.updateUser(data.id, data).then((response)=>{
     if (response.data===200) {
      setUser(response.data); 
      history.push("/admin");
-     setReload(!reload);
+     setReload(reload);
      setMessage({value:'User :' + params.id + ' is updated successfully',type:'success'}); 
     
     } else {
