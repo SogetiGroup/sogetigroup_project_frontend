@@ -36,18 +36,20 @@ const AddUser = () => {
                     {errors.firstName && <span className='text-danger'>First Name is required</span>}
                     </div>
                      <div className='row mb-3'>
-                       <div className='col-m-auto'><input type="text"{...register("lastName",{required:true})} placeholder="Enter LastName" class="form-control" /></div>
+                       <div className='col-m-auto'><input type="text"{...register("lastName",{required:true})} placeholder="Enter LastName" className="form-control" /></div>
                        {errors.lastName && <span className='text-danger'>Last Name is required</span>}
                      </div>
                      <div className='row mb-3'>
-                           <div className='col- m-auto'><input type="text"{...register("email",{required:true})} placeholder="Enter Email" class="form-control" /></div>
+                           <div className='col- m-auto'><input type="text"{...register("email",{required:true})} placeholder="Enter Email" className="form-control" /></div>
                            {errors.email && <span className='text-danger'>Email is required</span>}
                      </div>
                      <div className='row mb-3'>
-                     < div className='col- m-auto'><input type="text"{...register("userTitle",{required:true})} class="form-control" placeholder="Enter userTitle"/></div>
+                     < div className='col- m-auto'><input type="text"{...register("userTitle",{required:true})} className="form-control" placeholder="Enter userTitle"/></div>
+                     {errors.userTitle && <span className='text-danger'>UserTitle is required</span>}
                     </div>
                      <div className='row mb-3'>
-                           <div className='col- m-auto'><input type="text"{...register("userLevel",{required:true})} placeholder="Enter UserLevel" class="form-control" /></div>
+                           <div className='col- m-auto'><input type="text"{...register("userLevel",{required:true})} placeholder="Enter UserLevel" className="form-control" /></div>
+                           {errors.userLevel && <span className='text-danger'>UserLevel is required</span>}
                      </div>
                     <button type='submit' className='btn btn-primary m-2'>Add</button>
                     <Link to="/admin" className="btn btn-danger"> Cancel </Link>

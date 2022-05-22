@@ -16,7 +16,7 @@ const UserRouter = () => {
                             <Route path="/home" component={Home}/>
                             <Route path="/about" component={About}/>
                             <Route path="/contact" component={Contact}/>
-                            <Route path="/signup" component={SignUp}/>
+                            {/* <Route path="/signup" component={SignUp}/> */}
                             <Route path="/signin" component={SignIn}/>
                             <Route path="/admin" component={AdminComponent}/>
                             <Route path="/add" component={AddUser}/>
@@ -37,7 +37,7 @@ const About=()=><h5>About Us Page</h5>
 const Contact=()=><h5>Contact Us Page</h5>
 const NotFound = () => <b>Page Not Found</b>;
 
-const SignUp=()=>
+/* const SignUp=()=>
             <div class="container ">         
                 <div class="col-xs-12 col-sm-10 offset-sm-1 p-sm-5 ">
                     <form className='form-control m-2 p-3'>
@@ -60,7 +60,7 @@ const SignUp=()=>
                     </form>	
                 </div>
             </div>
-
+ */
 
 const SignIn=()=>
 <div class="container">
