@@ -23,6 +23,7 @@ const Mailer = () => {
    return(
     <div>
         <div className="container">
+        <div className='col-xs-10 col-sm-8 p-sm-5 '>
         <form>
                 <div className="row pt-5 mx-auto">
                     <div className="col-8 form-group pt-2 mx-auto">
@@ -39,6 +40,7 @@ const Mailer = () => {
                     </div>
                 </div>
             </form>
+            </div>
         </div>
     </div>
     );
