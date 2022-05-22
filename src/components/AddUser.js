@@ -32,7 +32,7 @@ const AddUser = () => {
         <div className='col-xs-10 col-sm-8 p-sm-5 '>
             <form className='form-control m-2 p-3' onSubmit={handleSubmit(saveUser)}>
                      <div className='row mb-3'>
-                        <div className='col- m-auto'><input type="text"{...register("firstName",{required:true})} placeholder="Enter FirstName" class="form-control" /></div>
+                        <div className='col- m-auto'><input type="text"{...register("firstName",{required:true})} placeholder="Enter FirstName" className="form-control" /></div>
                     {errors.firstName && <span className='text-danger'>First Name is required</span>}
                     </div>
                      <div className='row mb-3'>
