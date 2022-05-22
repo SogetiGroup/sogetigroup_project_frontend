@@ -47,21 +47,18 @@ const AddUser = () => {
                      < div className='col- m-auto'><input type="text"{...register("userTitle",{required:true})} className="form-control" placeholder="Enter userTitle"/></div>
                      {errors.userTitle && <span className='text-danger'>UserTitle is required</span>}
                     </div>
-                     <div className='row mb-3'>
+                    <div className='row mb-3'>
                            <div className='col- m-auto'><input type="text"{...register("userLevel",{required:true})} placeholder="Enter UserLevel" className="form-control" /></div>
                            {errors.userLevel && <span className='text-danger'>UserLevel is required</span>}
-<<<<<<< HEAD
-=======
-                     </div>
-                     <div className='row mb-3'>
+                    </div>
+                    <div className='row mb-3'>
                            <div className='col- m-auto'><input type="text"{...register("userName",{required:true})} placeholder="Enter UserName" className="form-control" /></div>
                            {errors.userName && <span className='text-danger'>UserName is required</span>}
-                     </div>
-                     <div className='row mb-3'>
+                    </div>
+                    <div className='row mb-3'>
                            <div className='col- m-auto'><input type="text"{...register("password",{required:true})} placeholder="Enter Password" className="form-control" /></div>
                            {errors.password && <span className='text-danger'>Password is required</span>}
->>>>>>> c1ee67a63217c55f4ea93a2169f9cac1c8841d88
-                     </div>
+                    </div>
                     <button type='submit' className='btn btn-primary m-2'>Add</button>
                     <Link to="/admin" className="btn btn-danger"> Cancel </Link>
             </form>	
