@@ -16,7 +16,6 @@ const UserRouter = () => {
                             <Route path="/home" component={Home}/>
                             <Route path="/about" component={About}/>
                             <Route path="/contact" component={Contact}/>
-                            {/* <Route path="/signup" component={SignUp}/> */}
                             <Route path="/signin" component={SignIn}/>
                             <Route path="/admin" component={AdminComponent}/>
                             <Route path="/add" component={AddUser}/>
@@ -34,33 +33,32 @@ const UserRouter = () => {
 const Welcome=()=><h5>Welcome Page</h5>
 const Home=()=><h5>Home Page</h5>
 const About=()=><h5>About Us Page</h5>
-const Contact=()=><h5>Contact Us Page</h5>
 const NotFound = () => <b>Page Not Found</b>;
 
-/* const SignUp=()=>
+const Contact=()=>
             <div class="container ">         
                 <div class="col-xs-12 col-sm-10 offset-sm-1 p-sm-5 ">
                     <form className='form-control m-2 p-3'>
-                        <div class="panel-body text-center text-black"><h4 class="flexi shadow border-b">USER REGISTRATION FORM</h4></div>
-                             <div class="row mb-3 ">
-                                <div class="col-sm-9 m-auto"><input type="text" placeholder="Enter FirstName" class="form-control" /></div>
+                        <div class="panel-body text-center text-black"><h4 class="flexi shadow border-b">CONTACT US</h4></div>
+                             <div class="col-8 form-group pt-3 mx-auto">
+                                <div class="col-sm-14 m-auto"><input type="text" placeholder="Enter Name" class="form-control" /></div>
                             </div>
-                             <div class="row mb-3 ">
-                               <div class="col-sm-9 m-auto"><input type="text" placeholder="Enter LastName" class="form-control" /></div>
+                             <div class="col-8 form-group pt-3 mx-auto">
+                                   <div class="col-sm-14 m-auto"><input type="text" placeholder="Enter Email" class="form-control" /></div>
                              </div>
-                             <div class="row mb-3">
-                                   <div class="col-sm-9 m-auto"><input type="text" placeholder="Enter Email" class="form-control" /></div>
+                             <div class="col-8 form-group pt-3 mx-auto">
+                                   <div class="col-sm-14 m-auto"><input type="text" placeholder="Enter Subject" class="form-control" /></div>
                              </div>
-                             <div class="row mb-3">
-<                                  div class="col-sm-9 m-auto"><input type="password" class="form-control" placeholder="Enter password"/></div>
+                             <div className="col-8 form-group pt-3 mx-auto">
+                                <textarea className="form-control" id="" cols="30" rows="8" placeholder="Your message" name="message"></textarea>
                             </div>
-                            <div class="row mb-3">
-                                 <div class="col-sm-2 m-auto"><button type="submit" class="btn btn-primary btn-block">Submit</button></div>
+                            <div class="col-8 form-group pt-3 mx-auto"> 
+                                 <div class="row col-3 pt-2 mx-auto"><button type="submit" class="btn btn-info btn-block">Send message</button></div>
                             </div>
                     </form>	
                 </div>
             </div>
- */
+
 
 const SignIn=()=>
 <div class="container">
@@ -87,7 +85,6 @@ const SignIn=()=>
                     <button class="btn btn-md btn-primary btn-block text-uppercase px-3 m-3 "
                         type="submit">Sign in</button>
                          <p class="small mb-5 pb-lg-2 px-3"><a class="text-muted" href="#!">Forgot password?</a></p>
-                         <p>Don't have an account? <a href="/signup" class="link-primary">Register here</a></p>
                 </form>
             </div>
         </div>
@@ -114,9 +111,6 @@ const Header=()=>{
                         </li>
                         <li className='nav-item'>
                             <Link className="navbar-brand" to="/contact" >Contact Us </Link>
-                        </li>
-                        <li className='nav-item'>
-                            <Link className="navbar-brand"  to="/signup" >Sign Up </Link>
                         </li>
                     </ul>
                     <form>                  
