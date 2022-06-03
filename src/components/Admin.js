@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-const AdminComponent = () => {
+const Admin = () => {
 
  const [users,setUsers]= useState([]);
  const [message,setMessage]=useState({value:"",type:""});
@@ -32,8 +32,7 @@ service.getAllUsers().then((response)=>{
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>FirstName</th>
-                        <th>LastName</th>
+                        <th>Name</th>
                         <th>Email</th>
                         <th>Title</th>
                         <th>UserLevel</th>
@@ -78,8 +77,7 @@ const TableRow = ()=> {
             users.map( (user)=> (
                 <tr key={user.id}>
                     <td>{user.id}</td>
-                    <td>{user.firstName}</td>
-                    <td>{user.lastName}</td>
+                    <td>{user.firstName} {user.lastName} </td>
                     <td>{user.email}</td>
                     <td> {user.userTitle}</td>
                     <td>{user.userLevel}</td>
@@ -114,4 +112,4 @@ return(
 
 };
 
-export default AdminComponent;
+export default Admin;

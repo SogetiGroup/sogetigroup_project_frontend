@@ -86,23 +86,24 @@ return (
         <div className='container'>         
         <div className='col-xs-10 col-sm-8 p-sm-5 '>
             <form className='form-control m-2 p-3'>
+            <div class="panel-body text-center text-black"><h4 class="flexi shadow border-b">User Information</h4></div>
                      <div className='row mb-3'>
-                        <div className='col- m-auto'><input value={user.firstName}  type="text" onChange={(e)=> inputChangeHandle(e,"firstName")}  placeholder="Enter FirstName" class="form-control" /></div>
+                        <div className='col- m-auto'><h6>FirstName</h6><input value={user.firstName}  type="text" onChange={(e)=> inputChangeHandle(e,"firstName")}  placeholder="Enter FirstName" class="form-control" /></div>
                    
                     </div>
                      <div className='row mb-3'>
-                       <div className='col-m-auto'><input value={user.lastName} type="text" onChange={(e)=> inputChangeHandle(e,"lastName")}  placeholder="Enter LastName" class="form-control" /></div>
+                       <div className='col-m-auto'><h6>LastName</h6><input value={user.lastName} type="text" onChange={(e)=> inputChangeHandle(e,"lastName")}  placeholder="Enter LastName" class="form-control" /></div>
                        
                      </div>
                      <div className='row mb-3'>
-                           <div className='col- m-auto'><input value={user.email} type="text" onChange={(e)=> inputChangeHandle(e,"email")} placeholder="Enter Email" class="form-control" /></div>
+                           <div className='col- m-auto'><h6>Email</h6><input value={user.email} type="text" onChange={(e)=> inputChangeHandle(e,"email")} placeholder="Enter Email" class="form-control" /></div>
                           
                      </div>
                      <div className='row mb-3'>
-                     < div className='col- m-auto'><input value={user.userTitle} type="text" onChange={(e)=> inputChangeHandle(e,"userTitle")} class="form-control" placeholder="Enter userTitle"/></div>
+                     < div className='col- m-auto'><h6>UserTitle</h6><input value={user.userTitle} type="text" onChange={(e)=> inputChangeHandle(e,"userTitle")} class="form-control" placeholder="Enter userTitle"/></div>
                     </div>
                      <div className='row mb-3'>
-                           <div className='col- m-auto'><input value={user.userLevel} type="text" onChange={(e)=> inputChangeHandle(e,"userLevel")} placeholder="Enter UserLevel" class="form-control" /></div>
+                           <div className='col- m-auto'><h6>UserLevel</h6><input value={user.userLevel} type="text" onChange={(e)=> inputChangeHandle(e,"userLevel")} placeholder="Enter UserLevel" class="form-control" /></div>
                      </div>
                     <Link to="/admin" className='btn btn-primary m-2' onClick={editUser}>Update</Link>
                     <Link to="/admin" className="btn btn-danger"> Cancel </Link>

@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react';
 import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 import AddUser from './AddUser';
-import AdminComponent from './AdminComponent';
-import Mailer from './Mailer';
+import Admin from './Admin';
+import Mail from './Mail';
 import UpdateUser from './UpdateUser';
+import Invitation from './Invitation';
+import App from './App';
+import Time from './Time';
 
 const UserRouter = () => {
     return (
@@ -17,10 +20,13 @@ const UserRouter = () => {
                             <Route path="/about" component={About}/>
                             <Route path="/contact" component={Contact}/>
                             <Route path="/signin" component={SignIn}/>
-                            <Route path="/admin" component={AdminComponent}/>
+                            <Route path="/admin" component={Admin}/>
                             <Route path="/add" component={AddUser}/>
-                            <Route path="/email" component={Mailer}/>
+                            <Route path="/email" component={Mail}/>
                             <Route path="/update/:id" component={UpdateUser}/>
+                            <Route path="/invitation" component={Invitation}/>
+                            <Route path="/app" component={App}/>                          
+                            <Route path="/times" component={Time}/>                          
 
                             <Route component={NotFound}/>
                         </Switch>
@@ -66,7 +72,7 @@ const SignIn=()=>
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin m-5">
             <div class="card-body">
-                <h5 class="card-title text-center">Sign in</h5>
+                <h5 class="card-title text-center">Sign In</h5>
                 <form class="form-signin ">
                     <div class="form-label-group">
                         <input type="text" id="email" name="email"
@@ -114,7 +120,7 @@ const Header=()=>{
                         </li>
                     </ul>
                     <form>                  
-                         <Link type='button' className='btn btn-outline-primary' to="/signin">Login</Link>
+                         <Link type='button' className='btn btn-outline-primary' to="/signin">SignIn</Link>
                     </form>              
                 </div>
             </nav>

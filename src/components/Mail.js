@@ -1,24 +1,22 @@
 import { useState } from 'react';
-import MailerService from '../services/MailerService';
+import MailService from '../services/MailService';
 
-const Mailer = () => {
+const Mail = () => {
 
     const [message, setMessage] = useState({value: '',type: ''});
     const [reload, setReload] = useState();
     
     const sendEmail = () => {
-   const service= new MailerService();
-   service.sendEmailTo().then((response) => {
-    if(response.exists()) { 
-        console.log(response.text);
-        setMessage({value: "Mail was successfully sent!", type: "success"});
-} else {
-    setMessage({value: "API Error!", type: "danger"});
-}  
-    
-       });
-   }
-
+        const service = new MailService();
+        service.sendEmailTo().then((response) => {
+            if (response.exists()) {
+                console.log(response.text);
+                setMessage({value: 'Mail was successfully sent!', type: 'success'});
+            } else {
+                setMessage({value: 'API Error', type: 'danger'});
+            }
+        });
+    }
 
    return(
     <div>
@@ -46,4 +44,4 @@ const Mailer = () => {
     );
 };
 
-export default Mailer;
+export default Mail;

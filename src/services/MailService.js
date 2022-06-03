@@ -1,7 +1,7 @@
 import axios from "axios";
 const Base_URL="http://localhost:8080/api/v1/mail/";
 
-class MailerService {
+class MailService {
 
     sendEmailTo = async(data) => {
         return await axios.post(Base_URL, data).then(response => response);
@@ -12,4 +12,4 @@ class MailerService {
     };
 
 }
-export default MailerService;
+export default MailService;
