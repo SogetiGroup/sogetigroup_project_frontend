@@ -1,4 +1,4 @@
-import './App.css';
+import '../css/App.css';
 import Times from './Times.js'
 
 import React from 'react'

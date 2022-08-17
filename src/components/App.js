@@ -1,10 +1,10 @@
 import {useState} from 'react';
 import Calendar from 'react-calendar'; 
-import './App.css';
+import '../css/App.css';
 import Time from './Time.js'
 
 function App() {
- const [date, setDate] = useState(new Date())
+const [date, setDate] = useState(new Date())
 const [showTime, setShowTime] = useState(false) 
 
 
@@ -26,10 +26,9 @@ return (
      <span>Default selected date:</span>{' '} {date.toDateString()}
    </p>
         )}
-   <div className="text-center">
+   <div className="text">
       Selected date: {date.toDateString()}
          <Time showTime={showTime} date={date}/>
-
    </div>
  </div>
   );

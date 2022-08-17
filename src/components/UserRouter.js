@@ -19,7 +19,7 @@ const UserRouter = () => {
                             <Route path="/home" component={Home}/>
                             <Route path="/about" component={About}/>
                             <Route path="/contact" component={Contact}/>
-                            <Route path="/signin" component={SignIn}/>
+                            <Route path="/login" component={LogIn}/>
                             <Route path="/admin" component={Admin}/>
                             <Route path="/add" component={AddUser}/>
                             <Route path="/email" component={Mail}/>
@@ -66,37 +66,37 @@ const Contact=()=>
             </div>
 
 
-const SignIn=()=>
-<div class="container">
-<div class="row ">
-    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin m-5">
-            <div class="card-body">
-                <h5 class="card-title text-center">Sign In</h5>
-                <form class="form-signin ">
-                    <div class="form-label-group">
-                        <input type="text" id="email" name="email"
-                            placeholder="Enter Email" class="form-control m-auto mb-2" /> 
-                    </div>
-                    <div class="form-label-group">
-                        <input type="password" placeholder="Enter Password" id="password"
-                            name="password" class="form-control m-auto mb-2"/>  
-                    </div>
-                    <div class="custom-control custom-checkbox mb-3 px-2">
-                        <input type="checkbox" class="custom-control-input"
-                            id="customCheck1"/>
-                             <label class="custom-control-label"
-                            for="customCheck1">Remember password</label>
-                    </div>
-                    <button class="btn btn-md btn-primary btn-block text-uppercase px-3 m-3 "
-                        type="submit">Sign in</button>
-                         <p class="small mb-5 pb-lg-2 px-3"><a class="text-muted" href="#!">Forgot password?</a></p>
-                </form>
+const LogIn=()=>
+    <div class="container">
+    <div class="row ">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin m-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">LogIn</h5>
+                    <form class="form-signin ">
+                        <div class="form-label-group">
+                            <input type="text" id="email" name="email"
+                                placeholder="Enter Email" class="form-control m-auto mb-2" /> 
+                        </div>
+                        <div class="form-label-group">
+                            <input type="password" placeholder="Enter Password" id="password"
+                                name="password" class="form-control m-auto mb-2"/>  
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3 px-2">
+                            <input type="checkbox" class="custom-control-input"
+                                id="customCheck1"/>
+                                <label class="custom-control-label"
+                                for="customCheck1">Remember password</label>
+                        </div>
+                        <button class="btn btn-md btn-primary btn-block px-3 m-3 "
+                            type="submit">LogIn</button>
+                            <p class="small mb-5 pb-lg-2 px-3"><a class="text-muted" href="#!">Forgot password?</a></p>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
+    </div>
 
 
 const Header=()=>{
@@ -120,7 +120,7 @@ const Header=()=>{
                         </li>
                     </ul>
                     <form>                  
-                         <Link type='button' className='btn btn-outline-primary' to="/signin">SignIn</Link>
+                         <Link type='button' className='btn btn-outline-primary' to="/login">LogIn</Link>
                     </form>              
                 </div>
             </nav>

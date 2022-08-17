@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from 'react';
-import './App.css';
+import '../css/App.css';
 
 const time = ['08:00','09:00','10:00','14:00','15:00']
 
